@@ -1,35 +1,18 @@
 import './App.css'
-import { Link, Route, Routes } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
 import Characters from './pages/Characters'
 import Locations from './pages/Locations'
 import Episodes from './pages/Episodes'
 import Home from './pages/Home'
-
-// import Character from './interfaces/character'
-// import Location from './interfaces/location'
-// import Episode from './interfaces/episode'
-
+import NavBar from './components/NavBar'
+import Footer from './components/Footer'
 
 export default function App(): JSX.Element {
-
   return (
     <div className="App">
       <header>
         <h1 className='text-3xl text-slate-900 font-semibold'>Rick and Morty App</h1>
-        <nav>
-          <ul className='flex justify-center items-center gap-3'>
-            <li>
-              <Link to='/characters'>Characters</Link>
-            </li>
-            <li>
-              <Link to='/locations'>Locations</Link>
-            </li>
-            <li>
-              <Link to='/episodes'>Epidsodes</Link>
-            </li>
-          </ul>
-        </nav>
+        <NavBar />
       </header>
       <main>
         <Routes>
@@ -39,9 +22,7 @@ export default function App(): JSX.Element {
           <Route path='/locations' element={<Locations />} />
         </Routes>
       </main>
-      <footer>
-
-      </footer>
+      <Footer />
     </div>
   )
 }
